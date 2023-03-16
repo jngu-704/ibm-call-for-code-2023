@@ -19,14 +19,17 @@ const geoUrl =
 
 export default function MapChart() {
   const [powerplants, setPowerplants] = useState([]);
+  const [cities, setCities] = useState([]);
 
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/powerplants/")
       .then((response) => setPowerplants(response.data));
-  }, []);
 
-  console.log(powerplants);
+    axios
+      .get("http://localhost:8000/api/cities/")
+      .then((response) => setCities(response.data));
+  }, []);
 
   return (
     <ComposableMap>
@@ -45,6 +48,11 @@ export default function MapChart() {
             coordinates={[powerplant.longitude, powerplant.latitude]}
           >
             <circle r={0.1} fill="#F00" />
+          </Marker>
+        ))}
+        {cities.map((city) => (
+          <Marker key={city.id} coordinates={[city.longitude, city.latitude]}>
+            <circle r={0.1} fill="#FFFFFF" />
           </Marker>
         ))}
       </ZoomableGroup>
