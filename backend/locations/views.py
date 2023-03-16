@@ -9,3 +9,4 @@ from .models import Powerplant
 class PowerplantView(viewsets.ModelViewSet):
     serializer_class = PowerplantSerializer
     queryset = Powerplant.objects.all()
+    search_fields = ['country']
