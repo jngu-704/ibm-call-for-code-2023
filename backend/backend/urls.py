@@ -20,6 +20,7 @@ from locations import views
 
 router = routers.DefaultRouter()
 router.register(r'powerplants', views.PowerplantView, 'powerplant')
+router.register(r'cities', views.CityView, 'city')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

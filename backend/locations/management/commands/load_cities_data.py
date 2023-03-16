@@ -1,26 +1,25 @@
 import pandas as pd
 from django.core.management import BaseCommand
-from locations.models import Powerplant
+from locations.models import City
 
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        fields = ['country_long', 'name', 'capacity_mw',
-                  'latitude', 'longitude', 'primary_fuel']
-        df = pd.read_csv('static/global_power_plant_database.csv', sep=',',
+        fields = ['city_ascii', 'country', 'lat',
+                  'lng', 'population']
+        df = pd.read_csv('static/worldcities.csv', sep=',',
                          skipinitialspace=True, usecols=fields, low_memory=True)
         row_iter = df.iterrows()
-        powerplants = [
-            Powerplant(
-                country=row['country_long'],
-                name=row['name'],
-                capacity_mw=row['capacity_mw'],
-                latitude=row['latitude'],
-                longitude=row['longitude'],
-                primary_fuel=row['primary_fuel']
+        cities = [
+            City(
+                name=row['city_ascii'],
+                country=row['country'],
+                latitude=row['lat'],
+                longitude=row['lng'],
+                population=row['population'],
             )
             for index, row in row_iter
         ]
 
-        Powerplant.objects.bulk_create(powerplants)
+        City.objects.bulk_create(cities)
         print("CSV data has been added to database")

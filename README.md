@@ -5,6 +5,7 @@ root
 admin@123!
 
 python manage.py load_powerplant_data
+python manage.py load_cities_data
 
 Major world cities database used
 https://simplemaps.com/data/world-cities
