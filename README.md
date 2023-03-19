@@ -38,3 +38,7 @@ Icons
 <a href="https://www.flaticon.com/free-icons/geothermal-energy" title="geothermal energy icons">Geothermal energy icons created by Flat Icons - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/wave" title="wave icons">Wave icons created by Smashicons - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/energy" title="energy icons">Energy icons created by Flat Icons - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/city" title="city icons">City icons created by Eucalyp - Flaticon</a>
