@@ -21,7 +21,7 @@ import wave from "../img/wave.png";
 
 export default function PowerPlantMarkers(props) {
   const [powerplants, setPowerplants] = useState([]);
-  const iconSize = [30, 30];
+  const iconSize = [25, 25];
 
   const biomassIcon = new Icon({
     iconUrl: biomass,

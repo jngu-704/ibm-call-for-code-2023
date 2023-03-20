@@ -5,15 +5,15 @@ from locations.models import Powerplant
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        fields = ['country_long', 'name', 'capacity_mw',
+        fields = ['country', 'name', 'capacity_mw',
                   'latitude', 'longitude', 'primary_fuel']
         df = pd.read_csv('static/global_power_plant_database.csv', sep=',',
                          skipinitialspace=True, usecols=fields, low_memory=True)
         row_iter = df.iterrows()
         powerplants = [
             Powerplant(
-                country=row['country_long'],
                 name=row['name'],
+                country=row['country'],
                 capacity_mw=row['capacity_mw'],
                 latitude=row['latitude'],
                 longitude=row['longitude'],

@@ -5,7 +5,7 @@ from locations.models import City
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        fields = ['city_ascii', 'country', 'lat',
+        fields = ['city_ascii', 'iso3', 'lat',
                   'lng', 'population']
         df = pd.read_csv('static/worldcities.csv', sep=',',
                          skipinitialspace=True, usecols=fields, low_memory=True)
@@ -13,7 +13,7 @@ class Command(BaseCommand):
         cities = [
             City(
                 name=row['city_ascii'],
-                country=row['country'],
+                country=row['iso3'],
                 latitude=row['lat'],
                 longitude=row['lng'],
                 population=row['population'],
