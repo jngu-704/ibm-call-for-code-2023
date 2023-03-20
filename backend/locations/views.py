@@ -9,7 +9,7 @@ from .models import Powerplant, City
 class PowerplantView(viewsets.ModelViewSet):
     serializer_class = PowerplantSerializer
     queryset = Powerplant.objects.all()
-    search_fields = ['country']
+    search_fields = ['country', 'primary_fuel']
 
 
 class CityView(viewsets.ModelViewSet):

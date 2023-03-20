@@ -41,4 +41,4 @@ Icons
 
 <a href="https://www.flaticon.com/free-icons/energy" title="energy icons">Energy icons created by Flat Icons - Flaticon</a>
 
-<a href="https://www.flaticon.com/free-icons/city" title="city icons">City icons created by Eucalyp - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/village" title="village icons">Village icons created by Freepik - Flaticon</a>
