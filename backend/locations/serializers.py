@@ -5,12 +5,10 @@ from .models import Powerplant, City
 class PowerplantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Powerplant
-        fields = ('id', 'name', 'country', 'capacity_mw',
-                  'latitude', 'longitude', 'primary_fuel')
+        fields = "__all__"
 
 
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
-        fields = ('id', 'name', 'country', 'latitude',
-                  'longitude', 'population')
+        fields = "__all__"

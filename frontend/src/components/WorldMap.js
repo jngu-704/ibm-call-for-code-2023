@@ -13,7 +13,7 @@ import ChangeMapCenter from "./ChangeMapCenter";
 
 export default function WorldMap(props) {
   return (
-    <>
+    <div aria-label="Map">
       <MapContainer center={props.coordinates} zoom={5} scrollWheelZoom={true}>
         <ChangeMapCenter center={props.coordinates} zoom={5} />
         <TileLayer
@@ -34,6 +34,6 @@ export default function WorldMap(props) {
           </LayersControl.Overlay>
         </LayersControl>
       </MapContainer>
-    </>
+    </div>
   );
 }

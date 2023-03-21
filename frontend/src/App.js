@@ -9,7 +9,6 @@ function App() {
   const [coordinates, setCoordinates] = useState([-27, 133]);
   const [cities, setCities] = useState([]);
   const [powerplants, setPowerplants] = useState([]);
-
   const inputRef = useRef(null);
 
   const handleClick = () => {
@@ -33,14 +32,31 @@ function App() {
 
   return (
     <div>
-      <input ref={inputRef} type="text" id="location" name="location" />
-      <button onClick={handleClick}>Submit</button>
-      <ListData powerplants={powerplants} cities={cities} />
-      {/* <WorldMap
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <input
+          class="form-control mr-sm-2"
+          type="text"
+          placeholder="ISO 3166-1"
+          aria-label="Search"
+          id="location"
+          name="location"
+          ref={inputRef}
+        />
+        <button
+          class="btn btn-outline-success my-2 my-sm-0"
+          type="submit"
+          onClick={handleClick}
+        >
+          Submit
+        </button>
+      </nav>
+
+      {/* <ListData powerplants={powerplants} cities={cities} /> */}
+      <WorldMap
         coordinates={coordinates}
         powerplants={powerplants}
         cities={cities}
-      /> */}
+      />
     </div>
   );
 }
