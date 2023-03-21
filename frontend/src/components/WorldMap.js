@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import {
   MapContainer,
   TileLayer,
@@ -11,19 +10,11 @@ import "leaflet/dist/leaflet.css";
 import PowerPlantMarkers from "./PowerPlantMarkers";
 import CityMarkers from "./CityMarkers";
 import ChangeMapCenter from "./ChangeMapCenter";
-import Legend from "./Legend";
 
 export default function WorldMap(props) {
-  const [map, setMap] = useState(null);
-
   return (
     <>
-      <MapContainer
-        center={props.coordinates}
-        zoom={5}
-        scrollWheelZoom={true}
-        whenCreated={setMap}
-      >
+      <MapContainer center={props.coordinates} zoom={5} scrollWheelZoom={true}>
         <ChangeMapCenter center={props.coordinates} zoom={5} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -33,16 +24,15 @@ export default function WorldMap(props) {
         <LayersControl position="topright">
           <LayersControl.Overlay name="Power Plants">
             <LayerGroup>
-              <PowerPlantMarkers country={props.location} />
+              <PowerPlantMarkers powerplants={props.powerplants} />
             </LayerGroup>
           </LayersControl.Overlay>
           <LayersControl.Overlay name="Cities">
             <LayerGroup>
-              <CityMarkers country={props.location} />
+              <CityMarkers cities={props.cities} />
             </LayerGroup>
           </LayersControl.Overlay>
         </LayersControl>
-        <Legend map={map} />
       </MapContainer>
     </>
   );

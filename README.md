@@ -17,7 +17,7 @@ Icons
 
 <a href="https://www.flaticon.com/free-icons/solar-panel" title="solar panel icons">Solar panel icons created by Freepik - Flaticon</a>
 
-<a href="https://www.flaticon.com/free-icons/wind-turbine" title="wind turbine icons">Wind turbine icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/wind-turbine" title="wind turbine icons">Wind turbine icons created by Graphiqa - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/oil" title="oil icons">Oil icons created by Icongeek26 - Flaticon</a>
 

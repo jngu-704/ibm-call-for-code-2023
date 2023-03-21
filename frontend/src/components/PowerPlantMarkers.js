@@ -1,6 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import axios from "axios";
 import { Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import "./WorldMap.css";
@@ -20,7 +18,6 @@ import waste from "../img/waste.png";
 import wave from "../img/wave.png";
 
 export default function PowerPlantMarkers(props) {
-  const [powerplants, setPowerplants] = useState([]);
   const iconSize = [25, 25];
 
   const biomassIcon = new Icon({
@@ -123,15 +120,9 @@ export default function PowerPlantMarkers(props) {
     }
   }
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/powerplants/?search=${props.country}`)
-      .then((response) => setPowerplants(response.data));
-  }, [props.country]);
-
   return (
     <>
-      {powerplants.map((powerplant) => (
+      {props.powerplants.map((powerplant) => (
         <Marker
           key={powerplant.id}
           position={[powerplant.latitude, powerplant.longitude]}
