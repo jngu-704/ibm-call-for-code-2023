@@ -1,8 +1,11 @@
 import "./App.css";
 import { useState, useRef, useEffect } from "react";
+import Button from "react-bootstrap/Button";
+import Navbar from "react-bootstrap/Navbar";
+import Form from "react-bootstrap/Form";
 import axios from "axios";
 import WorldMap from "./components/WorldMap";
-import ListData from "./components/ListData";
+import MapData from "./components/MapData";
 
 function App() {
   const [location, setLocation] = useState("AUS");
@@ -43,32 +46,31 @@ function App() {
 
   return (
     <div>
-      <nav class="navbar navbar-light bg-light justify-content-between">
-        <input
-          class="form-control mr-sm-2"
-          type="text"
-          placeholder="ISO 3166-1"
-          aria-label="Search"
-          id="location"
-          name="location"
-          ref={inputRef}
-        />
-        <button
-          class="btn btn-outline-success my-2 my-sm-0"
-          type="submit"
-          onClick={handleClick}
-        >
-          Submit
-        </button>
-      </nav>
+      <Navbar bg="light">
+        <h1>World Map</h1>
+        <Form className="d-flex">
+          <Form.Control
+            type="text"
+            placeholder="ISO 3166-1"
+            aria-label="location"
+            id="location"
+            name="location"
+            ref={inputRef}
+          />
+        </Form>
 
-      {/* <ListData powerplants={powerplants} cities={cities} /> */}
+        <Button type="submit" variant="outline-success" onClick={handleClick}>
+          Submit
+        </Button>
+      </Navbar>
+
       <WorldMap
         coordinates={coordinates}
         renewablePowerplants={renewablePowerplants}
         nonRenewablePowerplants={nonRenewablePowerplants}
         cities={cities}
       />
+      <MapData powerplants={powerplants} cities={cities} />
     </div>
   );
 }

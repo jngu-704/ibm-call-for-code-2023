@@ -25,7 +25,7 @@ class Command(BaseCommand):
                 return 1
             elif type == "Waste":
                 return 1
-            elif type == "Wave":
+            elif type == "Wave and Tidal":
                 return 1
             elif type == "Wind":
                 return 1

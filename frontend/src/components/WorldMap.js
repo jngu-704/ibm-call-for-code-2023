@@ -14,7 +14,7 @@ import ChangeMapCenter from "./ChangeMapCenter";
 export default function WorldMap(props) {
   return (
     <div aria-label="Map">
-      <MapContainer center={props.coordinates} zoom={5} scrollWheelZoom={true}>
+      <MapContainer center={props.coordinates} zoom={5} scrollWheelZoom={false}>
         <ChangeMapCenter center={props.coordinates} zoom={5} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

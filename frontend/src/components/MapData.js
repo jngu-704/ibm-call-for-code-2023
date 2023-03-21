@@ -1,14 +1,11 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
 
-export default function ListData(props) {
+export default function MapData(props) {
   return (
     <>
-      <select>
-        <option>Power Plants</option>
-        <option>Cities</option>
-      </select>
-      <Table striped bordered hover size="sm" variant="dark">
+      <h1>Power Plants</h1>
+      <Table striped bordered hover size="sm" variant="light">
         <thead>
           <tr>
             <th>ID</th>
@@ -34,7 +31,8 @@ export default function ListData(props) {
           ))}
         </tbody>
       </Table>
-      <Table striped bordered hover size="sm" variant="dark">
+      <h1>Cities</h1>
+      <Table striped bordered hover size="sm" variant="light">
         <thead>
           <tr>
             <th>ID</th>

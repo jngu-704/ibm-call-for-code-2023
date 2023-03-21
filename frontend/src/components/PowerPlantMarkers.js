@@ -134,7 +134,7 @@ export default function PowerPlantMarkers(props) {
             <br />
             Primary Fuel: {powerplant.primary_fuel}
             <br />
-            Capacity: {parseFloat(powerplant.capacity_mw)} mw
+            Capacity: {parseFloat(powerplant.capacity_mw)} MW
           </Popup>
         </Marker>
       ))}
