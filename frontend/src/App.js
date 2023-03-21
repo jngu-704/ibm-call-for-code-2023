@@ -9,6 +9,8 @@ function App() {
   const [coordinates, setCoordinates] = useState([-27, 133]);
   const [cities, setCities] = useState([]);
   const [powerplants, setPowerplants] = useState([]);
+  const [renewablePowerplants, setRenewablePowerplants] = useState([]);
+  const [nonRenewablePowerplants, setNonRenewablePowerplants] = useState([]);
   const inputRef = useRef(null);
 
   const handleClick = () => {
@@ -29,6 +31,15 @@ function App() {
       .get(`http://localhost:8000/api/powerplants/?search=${location}`)
       .then((response) => setPowerplants(response.data));
   }, [location]);
+
+  useEffect(() => {
+    setRenewablePowerplants(
+      powerplants.filter((powerplant) => powerplant.renewable === 1)
+    );
+    setNonRenewablePowerplants(
+      powerplants.filter((powerplant) => powerplant.renewable === 0)
+    );
+  }, [powerplants]);
 
   return (
     <div>
@@ -54,7 +65,8 @@ function App() {
       {/* <ListData powerplants={powerplants} cities={cities} /> */}
       <WorldMap
         coordinates={coordinates}
-        powerplants={powerplants}
+        renewablePowerplants={renewablePowerplants}
+        nonRenewablePowerplants={nonRenewablePowerplants}
         cities={cities}
       />
     </div>

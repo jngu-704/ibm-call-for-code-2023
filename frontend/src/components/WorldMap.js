@@ -22,9 +22,14 @@ export default function WorldMap(props) {
           noWrap={true}
         />
         <LayersControl position="topright">
-          <LayersControl.Overlay name="Power Plants">
+          <LayersControl.Overlay name="Renewable Energy Power Plants">
             <LayerGroup>
-              <PowerPlantMarkers powerplants={props.powerplants} />
+              <PowerPlantMarkers powerplants={props.renewablePowerplants} />
+            </LayerGroup>
+          </LayersControl.Overlay>
+          <LayersControl.Overlay name="Non Renewable Energy Power Plants">
+            <LayerGroup>
+              <PowerPlantMarkers powerplants={props.nonRenewablePowerplants} />
             </LayerGroup>
           </LayersControl.Overlay>
           <LayersControl.Overlay name="Cities">
