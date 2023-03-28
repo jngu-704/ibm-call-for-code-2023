@@ -14,12 +14,17 @@ import ChangeMapCenter from "./ChangeMapCenter";
 export default function WorldMap(props) {
   return (
     <div aria-label="Map">
-      <MapContainer center={props.coordinates} zoom={5} scrollWheelZoom={false}>
+      <MapContainer
+        center={props.coordinates}
+        zoom={5}
+        scrollWheelZoom={true}
+        worldCopyJump={true}
+      >
         <ChangeMapCenter center={props.coordinates} zoom={5} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          noWrap={true}
+          noWrap={false}
         />
         <LayersControl position="topright">
           <LayersControl.Overlay name="Renewable Energy Power Plants">

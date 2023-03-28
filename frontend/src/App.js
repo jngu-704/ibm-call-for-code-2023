@@ -46,12 +46,12 @@ function App() {
 
   return (
     <div>
-      <Navbar bg="light">
-        <h1>World Map</h1>
+      <Navbar bg="light" expand="lg" className="justify-content-between">
+        <h2>World Map</h2>
         <Form className="d-flex">
           <Form.Control
             type="text"
-            placeholder="ISO 3166-1"
+            placeholder="Enter ISO 3166-1"
             aria-label="location"
             id="location"
             name="location"

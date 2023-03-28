@@ -21,6 +21,8 @@ from locations import views
 router = routers.DefaultRouter()
 router.register(r'powerplants', views.PowerplantView, 'powerplant')
 router.register(r'cities', views.CityView, 'city')
+router.register(r'weatherstations', views.WeatherStation, 'weatherstation')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
