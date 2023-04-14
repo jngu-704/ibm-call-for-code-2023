@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import PowerplantSerializer, CitySerializer, WeatherStationSerializer, WeatherStationMonthlyAverageSerializer
-from .models import Powerplant, City, WeatherStation, WeatherStationMonthlyAverage
+from .serializers import PowerplantSerializer, CitySerializer, CityWeatherMonthlyAverageSerializer
+from .models import Powerplant, City, CityWeatherMonthlyAverage
 
 # Create your views here.
 
@@ -15,16 +15,9 @@ class PowerplantView(viewsets.ModelViewSet):
 class CityView(viewsets.ModelViewSet):
     serializer_class = CitySerializer
     queryset = City.objects.all()
-    search_fields = ['country']
+    search_fields = ['country', 'name']
 
 
-class WeatherStationView(viewsets.ModelViewSet):
-    serializer_class = WeatherStationSerializer
-    queryset = WeatherStation.objects.all()
-    search_fields = ['country']
-
-
-class WeatherStationView(viewsets.ModelViewSet):
-    serializer_class = WeatherStationMonthlyAverageSerializer
-    queryset = WeatherStationMonthlyAverage.objects.all()
-    search_fields = ['country']
+class CityWeatherMonthlyAverageView(viewsets.ModelViewSet):
+    serializer_class = CityWeatherMonthlyAverageSerializer
+    queryset = CityWeatherMonthlyAverage.objects.all()

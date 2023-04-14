@@ -57,11 +57,10 @@ function App() {
             name="location"
             ref={inputRef}
           />
+          <Button type="submit" variant="outline-success" onClick={handleClick}>
+            Submit
+          </Button>
         </Form>
-
-        <Button type="submit" variant="outline-success" onClick={handleClick}>
-          Submit
-        </Button>
       </Navbar>
 
       <WorldMap

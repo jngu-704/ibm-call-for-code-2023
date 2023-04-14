@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Powerplant, City, WeatherStation, WeatherStationMonthlyAverage
+from .models import Powerplant, City, CityWeatherMonthlyAverage
 
 
 class PowerplantSerializer(serializers.ModelSerializer):
@@ -14,13 +14,7 @@ class CitySerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class WeatherStationSerializer(serializers.ModelSerializer):
+class CityWeatherMonthlyAverageSerializer(serializers.ModelSerializer):
     class Meta:
-        model = WeatherStation
-        fields = "__all__"
-
-
-class WeatherStationMonthlyAverageSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = WeatherStationMonthlyAverage
+        model = CityWeatherMonthlyAverage
         fields = "__all__"

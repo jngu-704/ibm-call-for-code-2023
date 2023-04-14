@@ -30,24 +30,13 @@ class City(models.Model):
         return self.name
 
 
-class WeatherStation(models.Model):
-    station_name = models.CharField(max_length=100)
-    longitude = models.DecimalField(max_digits=7, decimal_places=4)
-    latitude = models.DecimalField(max_digits=6, decimal_places=4)
-    temperature_c = models.DecimalField(max_digits=3, decimal_places=1)
-    temperature_f = models.DecimalField(max_digits=4, decimal_places=1)
-    wind_kph = models.DecimalField(max_digits=4, decimal_places=1)
-    wind_mph = models.DecimalField(max_digits=4, decimal_places=1)
-
-
-class WeatherStationMonthlyAverage(models.Model):
-    station_name = models.CharField(max_length=100)
+class CityWeatherMonthlyAverage(models.Model):
+    city = models.CharField(max_length=100)
     month = models.IntegerField()
     longitude = models.DecimalField(max_digits=7, decimal_places=4)
     latitude = models.DecimalField(max_digits=6, decimal_places=4)
-    temperature_c = models.DecimalField(max_digits=3, decimal_places=1)
-    temperature_f = models.DecimalField(max_digits=4, decimal_places=1)
+    temperature_c_avg = models.DecimalField(max_digits=4, decimal_places=1)
+    temperature_c_min = models.DecimalField(max_digits=4, decimal_places=1)
+    temperature_c_max = models.DecimalField(max_digits=4, decimal_places=1)
     wind_kph = models.DecimalField(max_digits=4, decimal_places=1)
-    wind_mph = models.DecimalField(max_digits=4, decimal_places=1)
     number_of_sunny_days = models.IntegerField()
-    number_of_windy_days = models.IntegerField()
