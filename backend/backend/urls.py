@@ -22,7 +22,7 @@ router = routers.DefaultRouter()
 router.register(r'powerplants', views.PowerplantView, 'powerplant')
 router.register(r'cities', views.CityView, 'city')
 router.register(r'citiesweather',
-                views.CityWeatherMonthlyAverageView, 'cityweather')
+                views.CityWeatherYearlyAverageView, 'cityweather')
 
 
 urlpatterns = [
